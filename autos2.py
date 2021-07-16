@@ -1,4 +1,5 @@
-'''Dado el problema anterior del concesionario de autos debemos modificarlo,
+'''
+Dado el problema anterior del concesionario de autos debemos modificarlo,
 1teniendo en cuenta:
 
 1-Ya no sabemos cuantos clientes tendremos,
@@ -10,7 +11,8 @@
 --5.2: 6 a 10 personas: hay un descuento del 10%
 --5.3: 11 a 50 personas: hay un descuento del 15%
 --5.4: Más de 50 personas: El descuento es del 18%
-6-Solo se va a mostrar que se vendió al final del programa'''
+6-Solo se va a mostrar que se vendió al final del programa
+'''
 
 #global variables
 count_price = 0
@@ -29,10 +31,10 @@ if inicio_compra:
 
 while count_clients != 0:
     #start
-    person_nombre = input('Ingrese su nombre y apellido: ')
+    person_nombre = input('Ingrese su nombre y apellido: ').capitalize()
 
     #brand
-    person_marca = input('Ingrese la marca: ')
+    person_marca = input('Ingrese la marca: ').capitalize()
 
     if person_marca == 'Ford':
         count_price += 100000
@@ -45,7 +47,7 @@ while count_clients != 0:
         person_input_marca += 'Fiat $80000'
     else:
         while person_marca != 'Ford' or person_marca != 'Chevrolet' or person_marca != 'Fiat':
-            person_marca = input('Por favor ingrese las marcas disponibles: Ford, Chevrolet, Fiat: ')
+            person_marca = input('Por favor ingrese las marcas disponibles: Ford, Chevrolet, Fiat: ').capitalize()
             if person_marca == 'Ford':
                 count_price += 100000
                 person_input_marca += 'Ford $100000'
@@ -88,7 +90,7 @@ while count_clients != 0:
                 break
 
     #colors
-    person_color = input('Ingrese el color: ')
+    person_color = input('Ingrese el color: ').capitalize()
 
     if person_color == 'Blanco':
         count_price += 10000
@@ -101,7 +103,7 @@ while count_clients != 0:
         person_input_color += 'color Negro +$30000'
     else:
         while person_color != 'Blanco' or person_color != 'Azul' or person_color != 'Negro':
-            person_color = input('Por favor ingrese los colores permitidos: Blanco, Azul, Negro ')
+            person_color = input('Por favor ingrese los colores permitidos: Blanco, Azul, Negro ').capitalize()
             if person_color == 'Blanco':
                 count_price += 10000
                 person_input_color += 'color Blanco +$10000'
@@ -128,7 +130,7 @@ while count_clients != 0:
     count_general_buys += person_count_total
 
     #console
-    print(f'\n{person_nombre},')
+    print(f'\n{person_nombre.capitalize()},')
     print('¡Tu compra fue realizada con exito!\n')
     print('Detalles de la compra:')
     print(f'Auto {person_input_marca} con {person_input_puertas} del {person_input_color}.')
@@ -144,5 +146,5 @@ while count_clients != 0:
     if mas_clientes:
         count_clients += 1
     else:
-        print(f'Hubo {count_clients - 1} clientes e hicimos ${count_general_buys} pesos hoy.')
+        print(f'\n\nHubo {count_clients - 1} cliente/s e hicimos ${count_general_buys} pesos hoy.')
         count_clients = 0
